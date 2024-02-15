@@ -1,0 +1,96 @@
+.auth-panel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+    height: 400px;
+}
+
+.left-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+
+    margin-bottom: 80px;
+}
+
+.right-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+
+    margin-left: 40px;
+}
+
+.auth-panel-signup-section,
+.auth-panel-signin-section,
+.github-section,
+.title-section {
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(40deg, rgba(154, 168, 112, 1) 0%, rgba(187, 195, 164, 1) 100%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.auth-panel-signup-section {
+    border-radius: 20px 20px 20px 0;
+}
+
+.auth-panel-signin-section {
+    border-radius: 20px 20px 0 20px;
+}
+
+.title-section {
+    height: 100px;
+    border-radius: 20px 20px 20px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.github-section {
+    height: 100px;
+    border-radius: 20px 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.github-section svg {
+    font-size: 44px;
+    margin-right: 5px;
+}
+.github-section p {
+    font-size: 22px;
+}
+
+.auth-panel .panel-title {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.auth-panel form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.auth-panel input {
+    margin: 0 10px 10px 10px;
+    height: 30px;
+    width: 300px;
+}

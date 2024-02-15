@@ -1,0 +1,25 @@
+.message-main {
+    position: relative;
+
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.message-content {
+    min-width: 40%;
+    width: fit-content;
+    min-height: 30px;
+    padding: 10px;
+
+    background: var(--color-2);
+    border-radius: 20px 20px 20px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.292);
+    z-index: 3;
+}
+.my-message {
+    display: flex;
+    justify-content: flex-end;
+}
+.my-message .message-content {
+    border-radius: 20px 20px 0 20px;
+}
