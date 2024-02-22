@@ -1,5 +1,5 @@
 :root {
-  --color-0: linear-gradient(40deg, rgba(138,125,117,1) 0%, rgba(179,163,152,1) 100%);
+  --color-0: linear-gradient(40deg, rgb(103, 137, 128) 0%, rgb(137, 182, 154) 100%);
   --color-1: linear-gradient(40deg, rgba(154,168,112,1) 0%, rgba(187,195,164,1) 100%);
   --color-2: linear-gradient(40deg, rgb(172, 194, 160) 0%, rgba(198,220,186,1) 100%);
   --color-3: linear-gradient(40deg, #72b18e 0%, #91dcb8 100%);
@@ -11,6 +11,17 @@
 
   font-family: 'Rubik', sans-serif;
   color: #433b34;
+  fill: #433b34;
+}
+
+*::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.19);
+  border-radius: 30px;
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(84, 95, 79, .5);
+  border-radius: 30px;
 }
 
 main {
