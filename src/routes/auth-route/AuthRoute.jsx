@@ -127,7 +127,7 @@ export const AuthRoute = () => {
       <div className="auth-panel">
         <div className="left-sections">
           <section className="title-section">
-            <h1>Mini Chat!</h1>
+            <h1>Chatty!</h1>
           </section>
           <section className="auth-panel-signup-section">
             <h3 className="panel-title">Sign Up</h3>
