@@ -14,12 +14,15 @@ const socket = io('http://localhost:8000');
 function App() {
   const navigate = useNavigate()
 
-  const { myUser, setMyUser, setCurrentChat, currentChat } = useContext(DataContext)
+  const { myUser, setMyUser, setCurrentChat, setPreviousChat } = useContext(DataContext)
 
 
   const handleLogOut = () => {
     localStorage.removeItem("mini-chat-user")
     localStorage.removeItem("mini-chat-token")
+    setMyUser(null)
+    setCurrentChat(null)
+    setPreviousChat(null)
     navigate("/auth")
   }
 
@@ -58,11 +61,8 @@ function App() {
     <main>
       <div className='main-container'>
         <div className='profile-panel'>
-          <div className='profile-panel-header'>
-            <h3 className='panel-title'>Profile</h3>
-            <button onClick={handleLogOut}>log out</button>
-          </div>
           <p className='profile-panel-username'>{myUser.username}</p>
+          <button onClick={handleLogOut}>log out</button>
         </div>
         <div className="chat-panel">
           <MessagesContainer />

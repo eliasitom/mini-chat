@@ -1,17 +1,18 @@
 :root {
-  --color-0: linear-gradient(40deg, rgb(103, 137, 128) 0%, rgb(137, 182, 154) 100%);
-  --color-1: linear-gradient(40deg, rgba(154,168,112,1) 0%, rgba(187,195,164,1) 100%);
-  --color-2: linear-gradient(40deg, rgb(172, 194, 160) 0%, rgba(198,220,186,1) 100%);
-  --color-3: linear-gradient(40deg, #72b18e 0%, #91dcb8 100%);
-  --color-4: linear-gradient(40deg, rgb(151, 107, 107) 0%, rgb(208, 131, 131) 100%);
+  --color-0: #F1FADA;
+  --color-1: #9AD0C2;
+  --color-2: #2D9596;
+  --color-3: rgb(213, 99, 99);
+
+  --panel-box-shadow: 0 3px 1px #1a5556;
 }
 
 * {
   margin: 0;
 
   font-family: 'Rubik', sans-serif;
-  color: #433b34;
-  fill: #433b34;
+  color: #1a5556;
+  fill: #1a5556;
 }
 
 *::-webkit-scrollbar {
@@ -44,24 +45,32 @@ input {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   font-size: 16px;
-  background: var(--color-2);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  background: var(--color-0);
   border: none;
+  border-radius: 10px;
   color: black;
   outline: none;
   padding: 0 10px 0 10px;
+  box-shadow: inset 0 3px 1px #1a5556;
+
 }
 input::placeholder {
   color: #433b34;
   opacity: .3;
 }
 
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+
 button {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   background: var(--color-2);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  color: #F1FADA;
+  box-shadow: 0 3px 1px #1a5556;
   border: none;
   border-radius: 10px;
   cursor: pointer;

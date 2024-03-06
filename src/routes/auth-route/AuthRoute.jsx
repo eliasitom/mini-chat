@@ -16,11 +16,18 @@ export const AuthRoute = () => {
   const [signUpUsername, setSignUpUsername] = useState("")
   const [signUpPassword, setSignUpPassword] = useState("")
 
+  const [disabled, setDisabled] = useState(false)
+
 
   const handleSignUp = (e) => {
     e.preventDefault()
+    setDisabled(true)
 
-    if (!signUpUsername || !signUpPassword) return alert("You need to complete all the fields")
+    if (!signUpUsername || !signUpPassword) {
+      alert("You need to complete all the fields")
+      setDisabled(false)
+      return
+    }
 
     const userData = {
       username: signUpUsername,
@@ -34,20 +41,41 @@ export const AuthRoute = () => {
     })
       .then(response => response.json())
       .then(res => {
-        if(res.message === "User not found") return alert("User not found")
-        if(res.message === "Incorrect password") return alert("Incorrect password")
+        if(res.message === "User not found") {
+          alert("User not found")
+          setDisabled(false)
+          return
+        } 
+        if(res.message === "Incorrect password") {
+          alert("Incorrect password")
+          setDisabled(false)
+          return
+        }
         
         localStorage.setItem("mini-chat-token", JSON.stringify(res.newToken))
         navigate("/")
+        setDisabled(false)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        setDisabled(false)
+      })
   }
 
   const handleSignIn = (e) => {
     e.preventDefault()
+    setDisabled(true)
 
-    if (!signInUsername || !signInPassword || !confirmPassword) return alert("You need to complete all the fields")
-    if (confirmPassword !== signInPassword) return alert("Passwords do not match")
+    if (!signInUsername || !signInPassword || !confirmPassword) {
+      alert("You need to complete all the fields")
+      setDisabled(false)
+      return
+    }
+    if (confirmPassword !== signInPassword) {
+      alert("Passwords do not match")
+      setDisabled(false)
+      return
+    }
 
     const userData = {
       username: signInUsername,
@@ -64,8 +92,12 @@ export const AuthRoute = () => {
         localStorage.setItem("mini-chat-token", JSON.stringify(res.token))
         localStorage.setItem("mini-chat-user", JSON.stringify(res.newUser))
         navigate("/")
+        setDisabled(false)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        setDisabled(false)
+      })
   }
 
   const openGitHub = () => {
@@ -111,7 +143,7 @@ export const AuthRoute = () => {
                 value={signUpPassword}
                 onChange={e => setSignUpPassword(e.target.value)}
               />
-              <button>sign up</button>
+              <button disabled={disabled}>sign up</button>
             </form>
           </section>
         </div>
@@ -136,7 +168,7 @@ export const AuthRoute = () => {
                 value={confirmPassword}
                 onChange={e => setConfirmPassword(e.target.value)}
               />
-              <button>sign in</button>
+              <button disabled={disabled}>sign in</button>
             </form>
           </section>
           <section className="github-section" onClick={openGitHub}>

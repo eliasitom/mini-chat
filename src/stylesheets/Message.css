@@ -15,8 +15,11 @@
 
     background: var(--color-2);
     border-radius: 20px 20px 20px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.292);
+    box-shadow: var(--panel-box-shadow);
     z-index: 3;
+}
+.message-content p {
+    color: var(--color-0);
 }
 .my-message {
     display: flex;

@@ -14,10 +14,10 @@ export const SocialPanel = () => {
   }
 
   const handleFindUser = () => {
-    if(username === myUser.username) {
+    if (username === myUser.username) {
       return setUsername("")
     }
-    
+
     fetch(generalData.API_URL + "getUser/" + username, {
       method: "GET",
       headers: { "Content-Type": "application/json" }
@@ -57,7 +57,6 @@ export const SocialPanel = () => {
 
   return (
     <>
-      <h3 className='panel-title'>Chat with:</h3>
       <div className='social-panel-users-container'>
         <form className='social-panel-browser' onSubmit={e => { e.preventDefault(); handleFindUser(); }}>
           <input placeholder='find user'
