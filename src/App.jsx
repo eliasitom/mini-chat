@@ -7,7 +7,7 @@ import { DataContext } from "./context/DataContext.jsx"
 import io from "socket.io-client"
 import { MessagesContainer } from './routes/home-route/MessagesContainer';
 import { SocialPanel } from './routes/home-route/SocialPanel';
-const socket = io('https://mini-chat-api.onrender.com');
+const socket = io(generalData.FLAT_API_URL);
 
 
 

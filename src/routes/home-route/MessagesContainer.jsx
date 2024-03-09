@@ -4,9 +4,8 @@ import generalData from "../../../genetalData.json"
 
 
 import io from "socket.io-client"
-import e from 'cors';
 import { DataContext } from '../../context/DataContext';
-const socket = io('http://localhost:8000');
+const socket = io(generalData.FLAT_API_URL);
 
 
 export const MessagesContainer = () => {

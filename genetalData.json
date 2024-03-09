@@ -1,3 +1,4 @@
 {
-    "API_URL": "https://mini-chat-api.onrender.com/api/"
+    "API_URL": "https://mini-chat-api.onrender.com/api/",
+    "FLAT_API_URL": "https://mini-chat-api.onrender.com"
 }
